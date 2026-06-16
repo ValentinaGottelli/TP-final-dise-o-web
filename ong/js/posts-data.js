@@ -18,20 +18,22 @@ const POSTS = [
   },
   {
     slug: 'liberacion-delta',
-    titulo: 'Liberación en el Delta',
+    titulo: 'Libertad para el Aguará Guazú',
     tag: 'Campaña · Video',
     fecha: '30 ene 2026',
-    lugar: 'Delta del Paraná',
+    lugar: 'Esteros del Ibera',
     estado: 'Finalizado',
-    desc: 'El cierre soñado: un grupo de animales rehabilitados regresa a la naturaleza. Lo filmamos todo.',
+    desc: 'Yarará, un Aguará Guazú rescatado de cautiverio, regresa a los humedales tras meses de rehabilitación. Seguimiento en tiempo real.',
     img: 'videoplayback (1).mp4',
     video: true,
     cuerpo: `
-      <p>Después de meses de rehabilitación, llegó el día que justifica todo el trabajo: la <strong>liberación</strong>.</p>
-      <h2>De vuelta a casa</h2>
-      <p>En el Delta del Paraná soltamos a un grupo de animales recuperados, bajo seguimiento por GPS durante los meses siguientes.</p>
-      <blockquote>“Ver alejarse a un animal que llegó al borde de la muerte no tiene precio.”</blockquote>
-      <p>El video de la jornada estará disponible acá muy pronto.</p>`
+      <p>Hace un año rescatamos a <strong>Yarará</strong>, un Aguará Guazú macho que fue encontrado en cautiverio tras ser vendido como animal exótico. Sus patas habían sido lastimadas durante años de encierro. Hoy, después de meses de rehabilitación y fisioterapia, finalmente regresa a donde pertenece.</p>
+      <h2>El cazador de los esteros</h2>
+      <p>El Aguará Guazú es el cánido más grande de Sudamérica, un cazador solitario que habita los humedales y esteros del norte argentino. Con sus largas patas adaptadas para moverse entre la vegetación acuática, Yarará pasó sus primeros años libres recorriendo los Esteros del Ibera.</p>
+      <h2>De vuelta a la naturaleza</h2>
+      <p>En una fría mañana de enero, con el equipo de veterinarios y biólogos en alerta máxima, abrimos la puerta del corral. Yarará dudó apenas un segundo antes de salir corriendo hacia el humedal, sus patas recuperadas encontrando nuevamente su ritmo natural.</p>
+      <blockquote>"Verlo desaparecer entre los juncos con esa energía en cada paso fue el momento que validó cada esfuerzo. El Aguará Guazú volvía a ser salvaje."</blockquote>
+      <p>Está equipado con un collar de GPS que monitoreamos semanalmente. Ya ha establecido un territorio de más de 40 kilómetros cuadrados, cazando y explorando como debe ser. La libertad tiene un precio, pero Yarará ya la está pagando correctamente: cazando de noche, descansando en el monte, viviendo como los suyos.</p>`
   },
   {
     slug: 'censo-2026',

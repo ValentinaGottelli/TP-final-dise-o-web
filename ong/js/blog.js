@@ -30,3 +30,5 @@ function cardHTML(post) {
 }
 
 grid.innerHTML = POSTS.slice(0, 3).map(cardHTML).join('');
+
+
