@@ -1,0 +1,497 @@
+/* ══════════════════════════════════════════════
+   BLOG / PROYECTOS ACTIVOS
+   Grilla de tarjetas + página lectora de artículo
+   ══════════════════════════════════════════════ */
+
+/* ── SECCIÓN PROYECTOS ──
+   (este contenedor no tenía estilos en el proyecto: sin él la grilla
+   quedaba pegada al footer y a los bordes de la pantalla) */
+.proyectos-section {
+  padding: 5.5rem 6vw 6rem;
+  background: var(--crema);
+}
+
+.proyectos-header {
+  margin-bottom: 0.5rem;
+}
+
+.proyectos-header .hero-eyebrow {
+  margin-bottom: 0.8rem;
+}
+
+/* contenedor a ancho completo: así la grilla queda alineada con la
+   sección "proceso" de arriba (que también es full-bleed a 6vw). */
+.proyectos-inner {
+  width: 100%;
+}
+
+/* ── GRILLA DE PROYECTOS (estilo blog) ── */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 1fr;     /* todas las filas con la misma altura */
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* celda fantasma: ocupa lugar pero no se ve ni se puede clickear.
+   Sirve para que la última página mida igual que las demás. */
+.blog-card--ghost {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* tablet: 2 columnas */
+@media (max-width: 992px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* cada tarjeta es un enlace completo a su artículo */
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid rgba(26, 46, 30, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  height: 100%;
+}
+
+.blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(26, 46, 30, 0.14);
+}
+
+/* media cuadrada arriba */
+.blog-card-media {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: var(--verde-oscuro);
+}
+
+.blog-card-media img,
+.blog-card-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-card-media img,
+.blog-card:hover .blog-card-media video {
+  transform: scale(1.06);
+}
+
+/* etiqueta flotante sobre la imagen */
+.blog-card-badge {
+  position: absolute;
+  top: 0.9rem;
+  left: 0.9rem;
+  z-index: 2;
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 11px;
+  border-radius: 20px;
+  background: rgba(242, 237, 228, 0.92);
+  color: var(--verde-oscuro);
+  backdrop-filter: blur(4px);
+}
+
+/* indicador de video: ícono play centrado */
+.blog-card-play {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.blog-card-play span {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(26, 46, 30, 0.72);
+  color: var(--crema);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  padding-left: 4px;
+  backdrop-filter: blur(2px);
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.blog-card:hover .blog-card-play span {
+  transform: scale(1.12);
+  background: var(--verde-claro);
+}
+
+/* cuerpo de la tarjeta */
+.blog-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.5rem 1.5rem 1.7rem;
+}
+
+.blog-card-tag {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--verde-claro);
+  margin-bottom: 0.6rem;
+}
+
+.blog-card-titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  color: var(--verde-oscuro);
+  margin-bottom: 0.7rem;
+}
+
+.blog-card-desc {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--texto-suave);
+  margin-bottom: 1.3rem;
+}
+
+/* pie de tarjeta: fecha + "leer más" */
+.blog-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(26, 46, 30, 0.08);
+}
+
+.blog-card-fecha {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--texto-suave);
+}
+
+.blog-card-link {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--verde-oscuro);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.blog-card-link::after {
+  content: '→';
+  transition: transform 0.2s;
+}
+
+.blog-card:hover .blog-card-link::after {
+  transform: translateX(4px);
+}
+
+/* ── PAGINACIÓN ── */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.page-btn {
+  min-width: 42px;
+  height: 42px;
+  padding: 0 14px;
+  border: 1.5px solid rgba(26, 46, 30, 0.2);
+  border-radius: 2px;
+  background: transparent;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--verde-oscuro);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-btn:hover:not(:disabled):not(.active) {
+  background: var(--verde-oscuro);
+  color: var(--crema);
+  border-color: var(--verde-oscuro);
+}
+
+.page-btn.active {
+  background: var(--verde-oscuro);
+  border-color: var(--verde-oscuro);
+  color: var(--crema);
+  font-weight: 500;
+  cursor: default;
+}
+
+.page-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.page-btn.page-arrow {
+  font-size: 1rem;
+}
+
+/* ══════════════════════════════════════════════
+   PÁGINA DE ARTÍCULO (lector del blog)
+   ══════════════════════════════════════════════ */
+
+.articulo {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 3.5rem 6vw 5rem;
+}
+
+/* Columna de texto legible, centrada dentro del ancho del artículo.
+   La imagen/video destacado SÍ usa todo el ancho → look desktop,
+   no "mobile". */
+.articulo-head,
+.articulo-cuerpo {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.articulo-cta {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* migas de pan / volver */
+.articulo-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--texto-suave);
+  text-decoration: none;
+  margin-bottom: 2.5rem;
+  transition: color 0.2s;
+}
+
+.articulo-volver::before {
+  content: '←';
+  transition: transform 0.2s;
+}
+
+.articulo-volver:hover {
+  color: var(--verde-oscuro);
+}
+
+.articulo-volver:hover::before {
+  transform: translateX(-4px);
+}
+
+/* cabecera */
+.articulo-tag {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--verde-claro);
+  margin-bottom: 1rem;
+}
+
+.articulo-titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.08;
+  color: var(--verde-oscuro);
+  margin-bottom: 1.3rem;
+}
+
+.articulo-titulo em {
+  font-style: italic;
+  color: var(--verde-claro);
+}
+
+.articulo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1.2rem;
+  font-size: 0.78rem;
+  color: var(--texto-suave);
+  letter-spacing: 0.04em;
+  padding-bottom: 2.2rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(26, 46, 30, 0.1);
+}
+
+.articulo-meta .estado {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(74, 140, 85, 0.12);
+  color: var(--verde-claro);
+}
+
+/* imagen / video destacado */
+.articulo-media {
+  margin: 0 0 2.8rem;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--verde-oscuro);
+}
+
+.articulo-media img,
+.articulo-media video {
+  width: 100%;
+  display: block;
+}
+
+.articulo-media figcaption {
+  font-size: 0.74rem;
+  color: var(--texto-suave);
+  padding: 0.8rem 0.2rem 0;
+  font-style: italic;
+}
+
+/* placeholder de video (mientras no se sube el archivo real) */
+.video-placeholder {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  background:
+    linear-gradient(rgba(26, 46, 30, 0.55), rgba(26, 46, 30, 0.75));
+  background-size: cover;
+  background-position: center;
+  color: var(--crema);
+  text-align: center;
+  padding: 2rem;
+}
+
+.video-placeholder .play-circ {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(242, 237, 228, 0.95);
+  color: var(--verde-oscuro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  padding-left: 5px;
+  transition: transform 0.25s ease;
+}
+
+.video-placeholder:hover .play-circ {
+  transform: scale(1.08);
+}
+
+.video-placeholder p {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  opacity: 0.9;
+  max-width: 36ch;
+}
+
+/* cuerpo del texto */
+.articulo-cuerpo p {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--texto);
+  margin-bottom: 1.5rem;
+}
+
+.articulo-cuerpo h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--verde-oscuro);
+  margin: 2.5rem 0 1rem;
+}
+
+.articulo-cuerpo strong {
+  font-weight: 500;
+  color: var(--verde-oscuro);
+}
+
+/* cita destacada */
+.articulo-cuerpo blockquote {
+  border-left: 3px solid var(--acento);
+  padding: 0.4rem 0 0.4rem 1.5rem;
+  margin: 2rem 0;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--verde-oscuro);
+}
+
+/* CTA final dentro del artículo */
+.articulo-cta {
+  margin-top: 3.5rem;
+  padding: 2.2rem;
+  background: var(--verde-oscuro);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.articulo-cta h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--crema);
+  margin-bottom: 0.6rem;
+}
+
+.articulo-cta p {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: rgba(242, 237, 228, 0.7);
+  margin-bottom: 1.5rem;
+  max-width: 46ch;
+  margin-inline: auto;
+}
+
+.articulo-cta .btn-primary {
+  background: var(--acento);
+  color: var(--verde-oscuro);
+}
+
+.articulo-cta .btn-primary:hover {
+  background: var(--crema);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .articulo {
+    padding: 2.5rem 6vw 4rem;
+  }
+}

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto · Santuario Vida Verde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" href="img/front-view-tiger-head-isolated-on-transparent-background-tiger-face-png.webp" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/modal.css" />
+  <link rel="stylesheet" href="css/contacto.css" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    emailjs.init("yfnOUHrdScOiLv6yF");
+  </script>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a class="nav-logo" href="index.html">Santuario <span>Vida Verde</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="nosotros.html">Sobre nosotros</a></li>
+      <li><a href="proyectos.html">¿Qué hacemos?</a></li>
+      <li><a href="contacto.html" class="nav-active">Contacto</a></li>
+    </ul>
+    <button class="nav-cta" id="btn-donar-nav">Doná ahora</button>
+    <button class="nav-burger" id="burger" aria-label="Abrir menú">☰</button>
+  </nav>
+
+  <div class="nav-mobile" id="mobile-menu">
+    <a href="index.html">Inicio</a>
+    <a href="nosotros.html">Sobre nosotros</a>
+    <a href="proyectos.html">¿Qué hacemos?</a>
+    <a href="contacto.html">Contacto</a>
+    <button class="nav-cta" id="btn-donar-mobile">Doná ahora</button>
+  </div>
+
+  <section class="contacto-section">
+
+    <div class="contacto-info">
+      <p class="hero-eyebrow">Hablemos</p>
+      <h1 class="contacto-titulo">¿Querés<br><em>sumarte?</em></h1>
+      <p class="contacto-desc">
+        Ya sea para donar, ser voluntario, reportar un caso de tráfico ilegal o simplemente conocer más sobre nuestro trabajo, estamos acá.
+      </p>
+
+      <div class="contacto-datos">
+        <div class="dato-item">
+          <div>
+            <p class="dato-label">Email</p>
+            <p class="dato-valor">hola@vidaverde.org</p>
+          </div>
+        </div>
+        <div class="dato-item">
+          <div>
+            <p class="dato-label">Teléfono</p>
+            <p class="dato-valor">+54 11 4000-0000</p>
+          </div>
+        </div>
+        <div class="dato-item">
+          <div>
+            <p class="dato-label">Dirección</p>
+            <p class="dato-valor">Av. del Libertador 1234, Buenos Aires</p>
+          </div>
+        </div>
+        <div class="dato-item">
+          <div>
+            <p class="dato-label">Horario de atención</p>
+            <p class="dato-valor">Lun–Vie · 9:00 a 18:00 hs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contacto-form-wrap">
+      <form class="contacto-form" id="form-contacto" novalidate>
+
+        <div class="form-group">
+          <label for="nombre">Nombre completo *</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+          <span class="form-error" id="error-nombre">Por favor ingresá tu nombre.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+          <span class="form-error" id="error-email">Por favor ingresá un email válido.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="motivo">Motivo de contacto *</label>
+          <select id="motivo" name="motivo" required>
+            <option value="">Seleccioná una opción</option>
+            <option value="donacion">Quiero donar</option>
+            <option value="voluntario">Quiero ser voluntario</option>
+            <option value="denuncia">Reportar tráfico ilegal</option>
+            <option value="prensa">Consulta de prensa</option>
+            <option value="otro">Otro</option>
+          </select>
+          <span class="form-error" id="error-motivo">Por favor seleccioná un motivo.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje *</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Contanos en qué podemos ayudarte..." required></textarea>
+          <span class="form-error" id="error-mensaje">Por favor escribí tu mensaje.</span>
+        </div>
+
+        <button type="submit" class="btn-primary form-submit">Enviar mensaje</button>
+
+      </form>
+
+      <div class="form-success" id="form-success">
+        <h3>¡Mensaje enviado!</h3>
+        <p>Gracias por contactarnos. Te respondemos en menos de 48 horas.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="modal-donar" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+      <button class="modal-close" id="modal-close" aria-label="Cerrar">✕</button>
+      <div class="modal-header">
+        <p class="modal-eyebrow">Hacé la diferencia hoy</p>
+        <h2 class="modal-titulo" id="modal-titulo">Tu donación rescata vidas</h2>
+        <p class="modal-subtitulo">Cada peso va directo al cuidado de los animales en nuestro santuario.</p>
+      </div>
+      <div class="modal-montos">
+        <button class="monto-btn" data-monto="500">$500</button>
+        <button class="monto-btn" data-monto="1000">$1.000</button>
+        <button class="monto-btn active" data-monto="2500">$2.500</button>
+        <button class="monto-btn" data-monto="5000">$5.000</button>
+      </div>
+      <p class="modal-monto-label">Monto seleccionado: <strong id="monto-seleccionado">$2.500</strong></p>
+      <form class="modal-form" id="form-donacion">
+        <div class="modal-form-row">
+          <input type="text" placeholder="Nombre completo" required />
+          <input type="email" placeholder="Email" required />
+        </div>
+        <input type="text" placeholder="Número de tarjeta" maxlength="19" />
+        <div class="modal-form-row">
+          <input type="text" placeholder="MM/AA" maxlength="5" />
+          <input type="text" placeholder="CVV" maxlength="3" />
+        </div>
+        <button type="submit" class="modal-submit">Donar ahora</button>
+      </form>
+      <p class="modal-seguro">Pago seguro · Sin compromisos</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-logo">Santuario <span>Vida Verde</span></p>
+        <p class="footer-tagline">Cada animal merece ser libre.</p>
+        <p class="footer-desc">ONG sin fines de lucro dedicada al rescate, rehabilitación y liberación de fauna silvestre en cautiverio ilegal.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Navegación</p>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Sobre nosotros</a></li>
+          <li><a href="proyectos.html">¿Qué hacemos?</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Contacto</p>
+        <ul>
+          <li>hola@vidaverde.org</li>
+          <li>+54 11 4000-0000</li>
+          <li>Buenos Aires, Argentina</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Santuario Vida Verde. Todos los derechos reservados.</p>
+      <p>Hecho con amor para los que no tienen voz.</p>
+    </div>
+  </footer>
+
+  <script src="js/burger.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/contacto.js"></script>
+
+  <script>
+    document.getElementById("form-contacto").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const nombre  = document.getElementById("nombre");
+      const email   = document.getElementById("email");
+      const motivo  = document.getElementById("motivo");
+      const mensaje = document.getElementById("mensaje");
+
+      let valido = true;
+
+      function marcarError(campo, errorId) {
+        if (!campo.value.trim() || (campo.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(campo.value))) {
+          document.getElementById(errorId).style.display = "block";
+          campo.classList.add("input-error");
+          valido = false;
+        } else {
+          document.getElementById(errorId).style.display = "none";
+          campo.classList.remove("input-error");
+        }
+      }
+
+      marcarError(nombre,  "error-nombre");
+      marcarError(email,   "error-email");
+      marcarError(motivo,  "error-motivo");
+      marcarError(mensaje, "error-mensaje");
+
+      if (!valido) return;
+
+      const btn = this.querySelector(".form-submit");
+      btn.textContent = "Enviando…";
+      btn.disabled = true;
+
+      const templateParams = {
+        from_name:  nombre.value.trim(),
+        from_email: email.value.trim(),
+        motivo:     motivo.options[motivo.selectedIndex].text,
+        message:    mensaje.value.trim(),
+        to_name:    "Santuario Vida Verde", 
+      };
+
+      emailjs.send("service_uzeewcv", "template_9tqpw88", templateParams)
+        .then(function () {
+          document.getElementById("form-contacto").style.display = "none";
+          document.getElementById("form-success").style.display  = "block";
+        })
+        .catch(function (error) {
+          console.error("EmailJS error:", error);
+          btn.textContent = "Error al enviar. Intentá de nuevo.";
+          btn.disabled = false;
+        });
+    });
+  </script>
+
+</body>
+</html>

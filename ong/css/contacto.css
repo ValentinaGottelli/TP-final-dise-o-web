@@ -1,0 +1,215 @@
+/* ── ESTILOS PÁGINA: CONTACTO ── */
+
+.nav-active {
+  color: var(--verde-oscuro) !important;
+  font-weight: 500 !important;
+}
+
+/* ── LAYOUT PRINCIPAL ── */
+.contacto-section {
+  display: flex;
+  min-height: calc(100vh - var(--nav-h));
+  align-items: stretch;
+}
+
+/* columna izquierda */
+.contacto-info {
+  flex: 0 0 42%;
+  background: var(--verde-oscuro);
+  padding: 6rem 5vw 5rem 6vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contacto-info .hero-eyebrow {
+  color: var(--acento);
+  margin-bottom: 1.2rem;
+}
+
+.contacto-titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.6rem, 4.5vw, 4.5rem);
+  font-weight: 700;
+  color: var(--crema);
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+}
+
+.contacto-titulo em {
+  font-style: italic;
+  color: var(--acento);
+}
+
+.contacto-desc {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(242,237,228,0.65);
+  max-width: 38ch;
+  margin-bottom: 3rem;
+}
+
+.contacto-datos {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dato-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.dato-icon {
+  font-size: 1.2rem;
+  margin-top: 2px;
+}
+
+.dato-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--acento);
+  margin-bottom: 0.2rem;
+}
+
+.dato-valor {
+  font-size: 0.88rem;
+  color: rgba(242,237,228,0.8);
+  line-height: 1.5;
+}
+
+/* columna derecha */
+.contacto-form-wrap {
+  flex: 1;
+  padding: 6rem 6vw 5rem 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ── FORMULARIO ── */
+.contacto-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  max-width: 520px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--verde-oscuro);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid rgba(26,46,30,0.18);
+  border-radius: 2px;
+  background: transparent;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  color: var(--texto);
+  transition: border-color 0.2s;
+  outline: none;
+  resize: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--verde-claro);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(74,92,78,0.45);
+}
+
+/* estado de error */
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+  border-color: #c0392b;
+}
+
+.form-error {
+  font-size: 0.75rem;
+  color: #c0392b;
+  display: none;
+}
+
+.form-error.visible {
+  display: block;
+}
+
+.form-submit {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+/* ── MENSAJE DE ÉXITO ── */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 3rem 2rem;
+  max-width: 520px;
+}
+
+.form-success.visible {
+  display: block;
+}
+
+.success-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.form-success h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--verde-oscuro);
+  margin-bottom: 0.75rem;
+}
+
+.form-success p {
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+  line-height: 1.7;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .contacto-section {
+    flex-direction: column;
+    min-height: auto;
+  }
+  .contacto-info {
+    flex: none;
+    padding: 4rem 6vw 3.5rem;
+  }
+  .contacto-form-wrap {
+    padding: 4rem 6vw;
+  }
+  .contacto-form {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-submit {
+    width: 100%;
+    text-align: center;
+  }
+}

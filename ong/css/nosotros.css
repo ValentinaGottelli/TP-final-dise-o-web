@@ -1,0 +1,279 @@
+/* ── ESTILOS PÁGINA: SOBRE NOSOTROS ── */
+
+/* link activo en nav */
+.nav-active {
+  color: var(--verde-oscuro) !important;
+  font-weight: 500 !important;
+}
+
+/* ── HERO INTERNO ── */
+.page-hero {
+  position: relative;
+  padding: 0;
+  min-height: 45vh;
+  max-height: 520px;
+  overflow: hidden;
+}
+
+/* imagen del hero: ocupar todo el contenedor y recortarse */
+.page-hero picture img {
+  width: 100%;
+  height: 100%;
+  min-height: 45vh;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ligero overlay para asegurar contraste del texto */
+.page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 39, 18, 0.35);
+  z-index: 1;
+}
+
+.page-hero-inner {
+  position: absolute;
+  top: 50%;
+  left: 6vw;
+  transform: translateY(-50%);
+  z-index: 2;
+  max-width: 700px;
+  padding: 2rem 1rem;
+  color: var(--crema);
+}
+
+.page-hero-inner {
+  max-width: 700px;
+}
+
+.page-hero .hero-eyebrow {
+  color: var(--acento);
+  margin-bottom: 1.2rem;
+}
+
+.page-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-weight: 700;
+  color: var(--crema);
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+}
+
+.page-hero-title em {
+  font-style: italic;
+  color: var(--acento);
+}
+
+.page-hero-desc {
+  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+  line-height: 1.8;
+  color: rgba(242,237,228,0.7);
+  max-width: 52ch;
+}
+
+/* ── MISIÓN Y VISIÓN ── */
+.mv-section {
+  display: flex;
+  align-items: stretch;
+  padding: 5rem 6vw;
+  gap: 0;
+}
+
+.mv-card {
+  flex: 1;
+  padding: 3rem;
+}
+
+.mv-card:first-child {
+  background: var(--crema);
+}
+
+.mv-card:last-child {
+  background: #e8e2d9;
+}
+
+.mv-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 1.2rem;
+}
+
+.mv-titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--verde-oscuro);
+  margin-bottom: 1rem;
+}
+
+.mv-texto {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--texto-suave);
+  max-width: 40ch;
+}
+
+.mv-divider {
+  width: 1px;
+  background: rgba(26,46,30,0.1);
+  margin: 3rem 0;
+}
+
+/* ── VALORES ── */
+.valores-section {
+  padding: 5rem 6vw;
+  background: var(--verde-oscuro);
+}
+
+.valores-header {
+  margin-bottom: 3.5rem;
+}
+
+.valores-header .hero-eyebrow {
+  color: var(--acento);
+  margin-bottom: 0.8rem;
+}
+
+.section-titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  color: var(--crema);
+  font-weight: 700;
+}
+
+.valores-grid {
+  display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.valor-item {
+  flex: 1;
+  min-width: 200px;
+  padding: 2rem 2.5rem 2rem 0;
+  border-left: 1px solid rgba(242,237,228,0.12);
+  padding-left: 2.5rem;
+}
+
+.valor-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--acento);
+  opacity: 0.4;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.valor-nombre {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  color: var(--crema);
+  margin-bottom: 0.75rem;
+}
+
+.valor-desc {
+  font-size: 0.83rem;
+  line-height: 1.7;
+  color: rgba(242,237,228,0.6);
+}
+
+/* ── EQUIPO ── */
+.equipo-section {
+  padding: 5rem 6vw;
+}
+
+.equipo-header {
+  margin-bottom: 3.5rem;
+}
+
+.equipo-header .hero-eyebrow {
+  margin-bottom: 0.8rem;
+}
+
+.equipo-header .section-titulo {
+  color: var(--verde-oscuro);
+}
+
+.equipo-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.miembro {
+  flex: 1;
+  min-width: 200px;
+  padding: 2rem;
+  border: 1px solid rgba(26,46,30,0.1);
+  border-radius: 2px;
+}
+
+.miembro-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--verde-oscuro);
+  color: var(--crema);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+.miembro-nombre {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--verde-oscuro);
+  margin-bottom: 0.3rem;
+}
+
+.miembro-rol {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--verde-claro);
+  margin-bottom: 0.8rem;
+}
+
+.miembro-bio {
+  font-size: 0.83rem;
+  line-height: 1.7;
+  color: var(--texto-suave);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .mv-section {
+    flex-direction: column;
+  }
+  .mv-divider {
+    display: none;
+  }
+  .mv-card {
+    padding: 2.5rem 6vw;
+  }
+  .valores-grid {
+    gap: 2rem;
+  }
+  .valor-item {
+    min-width: 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-hero {
+    padding: 4rem 6vw 3.5rem;
+  }
+  .equipo-grid {
+    flex-direction: column;
+  }
+  .valor-item {
+    min-width: 100%;
+  }
+}

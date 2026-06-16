@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre Nosotros · Santuario Vida Verde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" href="img/front-view-tiger-head-isolated-on-transparent-background-tiger-face-png.webp" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/modal.css" />
+  <link rel="stylesheet" href="css/nosotros.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a class="nav-logo" href="index.html">Santuario <span>Vida Verde</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="nosotros.html" class="nav-active">Sobre nosotros</a></li>
+      <li><a href="proyectos.html">¿Qué hacemos?</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    <button class="nav-cta" id="btn-donar-nav">Doná ahora</button>
+    <button class="nav-burger" id="burger" aria-label="Abrir menú">☰</button>
+  </nav>
+
+  <!-- MENÚ MÓVIL -->
+  <div class="nav-mobile" id="mobile-menu">
+    <a href="index.html">Inicio</a>
+    <a href="nosotros.html">Sobre nosotros</a>
+    <a href="proyectos.html">¿Qué hacemos?</a>
+    <a href="contacto.html">Contacto</a>
+    <button class="nav-cta" id="btn-donar-mobile">Doná ahora</button>
+  </div>
+
+  <!-- HERO INTERNO -->
+  <section class="page-hero">
+    <picture>
+        <source media="(min-width: 993px)" srcset="img/monos-capuchinos.jpg" />
+        <source media="(min-width: 601px)"  srcset="img/monos-capuchinos.jpg" />
+        <img src="img/monos-capuchinos.jpg" alt="Mono capuchino" />
+      </picture>
+    <div class="page-hero-inner">
+      <p class="hero-eyebrow">Quiénes somos</p>
+      <h1 class="page-hero-title">Una causa,<br><em>un santuario.</em></h1>
+      <p class="page-hero-desc">Nacimos en 2012 con un solo animal rescatado. Hoy somos un equipo de 60 personas trabajando en 14 países para devolverle la libertad a la fauna silvestre.</p>
+    </div>
+  </section>
+
+  <!-- MISIÓN Y VISIÓN -->
+  <section class="mv-section">
+    <div class="mv-card">
+      <h2 class="mv-titulo">Nuestra misión</h2>
+      <p class="mv-texto">Rescatar, rehabilitar y liberar especies silvestres víctimas del tráfico ilegal de fauna, garantizando su bienestar físico y psicológico durante cada etapa del proceso.</p>
+    </div>
+    <div class="mv-divider"></div>
+    <div class="mv-card">
+      <h2 class="mv-titulo">Nuestra visión</h2>
+      <p class="mv-texto">Un mundo donde ningún animal silvestre viva en cautiverio ilegal. Donde cada especie pueda desarrollarse en su hábitat natural, libre de explotación humana.</p>
+    </div>
+  </section>
+
+  <!-- VALORES -->
+  <section class="valores-section">
+    <div class="valores-header">
+      <p class="hero-eyebrow">Lo que nos guía</p>
+      <h2 class="section-titulo">Nuestros valores</h2>
+    </div>
+    <div class="valores-grid">
+      <div class="valor-item">
+        <p class="valor-num">01</p>
+        <h3 class="valor-nombre">Transparencia</h3>
+        <p class="valor-desc">Publicamos cada informe financiero y de impacto. Sabés exactamente a dónde va cada peso que donás.</p>
+      </div>
+      <div class="valor-item">
+        <p class="valor-num">02</p>
+        <h3 class="valor-nombre">Bienestar animal</h3>
+        <p class="valor-desc">Cada decisión pasa primero por el bienestar del animal. No el nuestro, no el del donante: el del animal.</p>
+      </div>
+      <div class="valor-item">
+        <p class="valor-num">03</p>
+        <h3 class="valor-nombre">Sustentabilidad</h3>
+        <p class="valor-desc">Trabajamos con comunidades locales para que la conservación tenga raíces, no solo visitas.</p>
+      </div>
+      <div class="valor-item">
+        <p class="valor-num">04</p>
+        <h3 class="valor-nombre">Educación</h3>
+        <p class="valor-desc">Sin conciencia no hay cambio. Por eso parte de nuestro trabajo es enseñar, siempre.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPO -->
+  <section class="equipo-section">
+    <div class="equipo-header">
+      <p class="hero-eyebrow">Las personas detrás</p>
+      <h2 class="section-titulo">El equipo</h2>
+    </div>
+    <div class="equipo-grid">
+      <div class="miembro">
+        <div class="miembro-avatar">MR</div>
+        <h3 class="miembro-nombre">María Rodríguez</h3>
+        <p class="miembro-rol">Fundadora & Directora</p>
+        <p class="miembro-bio">Bióloga especializada en fauna silvestre. 20 años rescatando animales en América Latina.</p>
+      </div>
+      <div class="miembro">
+        <div class="miembro-avatar">JP</div>
+        <h3 class="miembro-nombre">Javier Peralta</h3>
+        <p class="miembro-rol">Veterinario Jefe</p>
+        <p class="miembro-bio">Especialista en medicina de animales exóticos. Ha rehabilitado más de 200 felinos silvestres.</p>
+      </div>
+      <div class="miembro">
+        <div class="miembro-avatar">LC</div>
+        <h3 class="miembro-nombre">Laura Castillo</h3>
+        <p class="miembro-rol">Coordinadora de Campo</p>
+        <p class="miembro-bio">Lidera los operativos de rescate en zonas de alto riesgo. Ex guardaparques nacional.</p>
+      </div>
+      <div class="miembro">
+        <div class="miembro-avatar">AT</div>
+        <h3 class="miembro-nombre">Andrés Torres</h3>
+        <p class="miembro-rol">Director de Comunicación</p>
+        <p class="miembro-bio">Cuenta las historias que el mundo necesita escuchar para actuar a favor de la fauna silvestre.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL DONACIÓN -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="modal-donar" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+      <button class="modal-close" id="modal-close" aria-label="Cerrar">✕</button>
+      <div class="modal-header">
+        <p class="modal-eyebrow">Hacé la diferencia hoy</p>
+        <h2 class="modal-titulo" id="modal-titulo">Tu donación rescata vidas</h2>
+        <p class="modal-subtitulo">Cada peso va directo al cuidado de los animales en nuestro santuario.</p>
+      </div>
+      <div class="modal-montos">
+        <button class="monto-btn" data-monto="500">$500</button>
+        <button class="monto-btn" data-monto="1000">$1.000</button>
+        <button class="monto-btn active" data-monto="2500">$2.500</button>
+        <button class="monto-btn" data-monto="5000">$5.000</button>
+      </div>
+      <p class="modal-monto-label">Monto seleccionado: <strong id="monto-seleccionado">$2.500</strong></p>
+      <form class="modal-form" id="form-donacion">
+        <div class="modal-form-row">
+          <input type="text" placeholder="Nombre completo" required />
+          <input type="email" placeholder="Email" required />
+        </div>
+        <input type="text" placeholder="Número de tarjeta" maxlength="19" />
+        <div class="modal-form-row">
+          <input type="text" placeholder="MM/AA" maxlength="5" />
+          <input type="text" placeholder="CVV" maxlength="3" />
+        </div>
+        <button type="submit" class="modal-submit">Donar ahora</button>
+      </form>
+      <p class="modal-seguro">Pago seguro · Sin compromisos</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-logo">Santuario <span>Vida Verde</span></p>
+        <p class="footer-tagline">Cada animal merece ser libre.</p>
+        <p class="footer-desc">ONG sin fines de lucro dedicada al rescate, rehabilitación y liberación de fauna silvestre en cautiverio ilegal.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Navegación</p>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Sobre nosotros</a></li>
+          <li><a href="proyectos.html">¿Qué hacemos?</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Contacto</p>
+        <ul>
+          <li>hola@vidaverde.org</li>
+          <li>+54 11 4000-0000</li>
+          <li>Buenos Aires, Argentina</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Santuario Vida Verde. Todos los derechos reservados.</p>
+      <p>Hecho con amor para los que no tienen voz.</p>
+    </div>
+  </footer>
+
+  <script src="js/burger.js"></script>
+  <script src="js/modal.js"></script>
+
+</body>
+</html>
