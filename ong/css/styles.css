@@ -400,6 +400,59 @@ nav.scrolled {
       object-fit: cover;
       object-position: center top;
       filter: sepia(15%) contrast(1.05);
+      transition: opacity 0.8s ease;
+    }
+
+    .hero-animal {
+      animation: float 3s ease-in-out infinite;
+      opacity: 0;
+    }
+
+    .hero-animal-1 {
+      animation-name: float, fade-hero-1;
+      animation-duration: 3s, 3s;
+      animation-timing-function: ease-in-out, ease-in-out;
+      animation-iteration-count: infinite, infinite;
+      animation-fill-mode: both, both;
+      animation-delay: 0s, 0s;
+      opacity: 1;
+    }
+
+    .hero-animal-2 {
+      animation-name: float, fade-hero-2;
+      animation-duration: 3s, 3s;
+      animation-timing-function: ease-in-out, ease-in-out;
+      animation-iteration-count: infinite, infinite;
+      animation-fill-mode: both, both;
+      animation-delay: 0s, 0s;
+      opacity: 0;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @keyframes fade-hero-1 {
+      0%, 45%, 100% {
+        opacity: 1;
+      }
+      50%, 95% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes fade-hero-2 {
+      0%, 45%, 100% {
+        opacity: 0;
+      }
+      50%, 95% {
+        opacity: 1;
+      }
     }
 
     .hero-badge {

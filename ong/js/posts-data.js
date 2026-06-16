@@ -31,7 +31,7 @@ const POSTS = [
       <h2>El cazador de los esteros</h2>
       <p>El Aguará Guazú es el cánido más grande de Sudamérica, un cazador solitario que habita los humedales y esteros del norte argentino. Con sus largas patas adaptadas para moverse entre la vegetación acuática, Yarará pasó sus primeros años libres recorriendo los Esteros del Ibera.</p>
       <h2>De vuelta a la naturaleza</h2>
-      <p>En una fría mañana de enero, con el equipo de veterinarios y biólogos en alerta máxima, abrimos la puerta del corral. Yarará dudó apenas un segundo antes de salir corriendo hacia el humedal, sus patas recuperadas encontrando nuevamente su ritmo natural.</p>
+      <p>En una calida mañana de enero, con el equipo de veterinarios y biólogos en alerta máxima, abrimos la puerta del corral. Yarará dudó apenas un segundo antes de salir corriendo hacia el humedal, sus patas recuperadas encontrando nuevamente su ritmo natural.</p>
       <blockquote>"Verlo desaparecer entre los juncos con esa energía en cada paso fue el momento que validó cada esfuerzo. El Aguará Guazú volvía a ser salvaje."</blockquote>
       <p>Está equipado con un collar de GPS que monitoreamos semanalmente. Ya ha establecido un territorio de más de 40 kilómetros cuadrados, cazando y explorando como debe ser. La libertad tiene un precio, pero Yarará ya la está pagando correctamente: cazando de noche, descansando en el monte, viviendo como los suyos.</p>`
   },
