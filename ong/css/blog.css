@@ -1,11 +1,3 @@
-/* ══════════════════════════════════════════════
-   BLOG / PROYECTOS ACTIVOS
-   Grilla de tarjetas + página lectora de artículo
-   ══════════════════════════════════════════════ */
-
-/* ── SECCIÓN PROYECTOS ──
-   (este contenedor no tenía estilos en el proyecto: sin él la grilla
-   quedaba pegada al footer y a los bordes de la pantalla) */
 .proyectos-section {
   padding: 5.5rem 6vw 6rem;
   background: var(--crema);
@@ -19,29 +11,25 @@
   margin-bottom: 0.8rem;
 }
 
-/* contenedor a ancho completo: así la grilla queda alineada con la
-   sección "proceso" de arriba (que también es full-bleed a 6vw). */
+
 .proyectos-inner {
   width: 100%;
 }
 
-/* ── GRILLA DE PROYECTOS (estilo blog) ── */
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-auto-rows: 1fr;     /* todas las filas con la misma altura */
+  grid-auto-rows: 1fr;     
   gap: 2rem;
   margin-top: 3rem;
 }
 
-/* celda fantasma: ocupa lugar pero no se ve ni se puede clickear.
-   Sirve para que la última página mida igual que las demás. */
+
 .blog-card--ghost {
   visibility: hidden;
   pointer-events: none;
 }
 
-/* tablet: 2 columnas */
 @media (max-width: 992px) {
   .blog-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -49,7 +37,6 @@
   }
 }
 
-/* cada tarjeta es un enlace completo a su artículo */
 .blog-card {
   display: flex;
   flex-direction: column;
@@ -68,7 +55,6 @@
   box-shadow: 0 18px 40px rgba(26, 46, 30, 0.14);
 }
 
-/* media cuadrada arriba */
 .blog-card-media {
   position: relative;
   aspect-ratio: 3 / 2;
@@ -90,7 +76,6 @@
   transform: scale(1.06);
 }
 
-/* etiqueta flotante sobre la imagen */
 .blog-card-badge {
   position: absolute;
   top: 0.9rem;
@@ -107,7 +92,6 @@
   backdrop-filter: blur(4px);
 }
 
-/* indicador de video: ícono play centrado */
 .blog-card-play {
   position: absolute;
   inset: 0;
@@ -138,7 +122,6 @@
   background: var(--verde-claro);
 }
 
-/* cuerpo de la tarjeta */
 .blog-card-body {
   display: flex;
   flex-direction: column;
@@ -170,7 +153,6 @@
   margin-bottom: 1.3rem;
 }
 
-/* pie de tarjeta: fecha + "leer más" */
 .blog-card-foot {
   display: flex;
   align-items: center;
@@ -205,7 +187,6 @@
   transform: translateX(4px);
 }
 
-/* ── PAGINACIÓN ── */
 .pagination {
   display: flex;
   justify-content: center;
@@ -256,9 +237,6 @@
   font-size: 1rem;
 }
 
-/* ══════════════════════════════════════════════
-   PÁGINA DE ARTÍCULO (lector del blog)
-   ══════════════════════════════════════════════ */
 
 .articulo {
   max-width: 1180px;
@@ -266,9 +244,7 @@
   padding: 3.5rem 6vw 5rem;
 }
 
-/* Columna de texto legible, centrada dentro del ancho del artículo.
-   La imagen/video destacado SÍ usa todo el ancho → look desktop,
-   no "mobile". */
+
 .articulo-head,
 .articulo-cuerpo {
   max-width: 940px;
@@ -282,7 +258,6 @@
   margin-right: auto;
 }
 
-/* migas de pan / volver */
 .articulo-volver {
   display: inline-flex;
   align-items: center;
@@ -308,7 +283,6 @@
   transform: translateX(-4px);
 }
 
-/* cabecera */
 .articulo-tag {
   font-size: 0.7rem;
   font-weight: 500;
@@ -355,7 +329,6 @@
   color: var(--verde-claro);
 }
 
-/* imagen / video destacado */
 .articulo-media {
   margin: 0 0 2.8rem;
   border-radius: 4px;
@@ -376,7 +349,6 @@
   font-style: italic;
 }
 
-/* placeholder de video (mientras no se sube el archivo real) */
 .video-placeholder {
   position: relative;
   aspect-ratio: 16 / 9;
@@ -419,7 +391,6 @@
   max-width: 36ch;
 }
 
-/* cuerpo del texto */
 .articulo-cuerpo p {
   font-size: 1rem;
   line-height: 1.9;
@@ -439,7 +410,6 @@
   color: var(--verde-oscuro);
 }
 
-/* cita destacada */
 .articulo-cuerpo blockquote {
   border-left: 3px solid var(--acento);
   padding: 0.4rem 0 0.4rem 1.5rem;
@@ -451,7 +421,6 @@
   color: var(--verde-oscuro);
 }
 
-/* CTA final dentro del artículo */
 .articulo-cta {
   margin-top: 3.5rem;
   padding: 2.2rem;
@@ -485,7 +454,6 @@
   background: var(--crema);
 }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 600px) {
   .blog-grid {
     grid-template-columns: 1fr;

@@ -29,7 +29,6 @@
       overflow-x: hidden;
     }
 
-    /* ── NAV ── */
     nav {
       position: sticky;
       top: 0;
@@ -98,7 +97,6 @@
       background: var(--verde-medio);
     }
 
-    /* hamburger */
     .nav-burger {
       display: none;
       flex-direction: column;
@@ -147,7 +145,6 @@
       align-self: flex-start;
     }
 
-    /* ── HERO ── */
     .hero {
       min-height: calc(100vh - var(--nav-h));
       display: flex;
@@ -155,7 +152,6 @@
       overflow: hidden;
     }
 
-    /* columna izquierda */
     .hero-text {
       flex: 0 0 48%;
       display: flex;
@@ -246,7 +242,6 @@
       transform: translateX(4px);
     }
 
-    /* stat row */
     .hero-stats {
       display: flex;
       gap: 2.5rem;
@@ -271,8 +266,6 @@
       color: var(--texto-suave);
       margin-top: 4px;
     }
-
-    /* columna derecha — imagen */
     .hero-image {
       flex: 1;
       position: relative;
@@ -315,9 +308,7 @@
       margin-bottom: 2px;
     }
 
-    /* ── RESPONSIVE ── */
 
-    /* tablet */
     @media (min-width: 600px) and (max-width: 992px) {
       .nav-links, .nav-cta {
         display: none;
@@ -349,7 +340,6 @@
       }
     }
 
-    /* celu */
     @media (max-width: 600px) {
       .nav-links, .nav-cta {
         display: none;

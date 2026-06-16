@@ -1,21 +1,10 @@
-/* ══════════════════════════════════════════════════════════════
-   GENERADOR DE PÁGINAS DE BLOG
-   --------------------------------------------------------------
-   Crea una carpeta por post en  /blog/<slug>/index.html
-   a partir de los datos de  js/posts-data.js
 
-   Uso:   node generate-posts.js
-
-   Es solo andamiaje: una vez generadas, podés editar cada
-   index.html a mano. Volvé a correrlo solo si querés regenerar.
-   ══════════════════════════════════════════════════════════════ */
 
 const fs = require('fs');
 const path = require('path');
 
-const POSTS = require('./js/posts-data.js');
+const POSTS = require('./posts-data.js');
 
-// Bloque de media: video (placeholder + <video> comentado) o imagen
 function mediaBlock(post) {
   if (post.video) {
     return `    <!-- ════════════════════════════════════════════════════════

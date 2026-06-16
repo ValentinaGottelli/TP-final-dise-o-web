@@ -15,7 +15,6 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <nav id="navbar">
     <a class="nav-logo" href="index.html">Santuario <span>Vida Verde</span></a>
     <ul class="nav-links">
@@ -28,7 +27,6 @@
     <button class="nav-burger" id="burger" aria-label="Abrir menú">☰</button>
   </nav>
 
-  <!-- MENÚ MÓVIL -->
   <div class="nav-mobile" id="mobile-menu">
     <a href="index.html">Inicio</a>
     <a href="nosotros.html">Sobre nosotros</a>
@@ -37,8 +35,6 @@
     <button class="nav-cta" id="btn-donar-mobile">Doná ahora</button>
   </div>
 
-  <!-- HERO CAROUSEL -->
-  <!-- Los controles están DENTRO de la sección para que position:absolute funcione -->
   <section class="hero-carousel" aria-label="Galería de proyectos">
     <div class="slides" id="hero-slides">
       <div class="slide"><img src="img/loro.jpg" alt="Loro rescatado"></div>
@@ -48,12 +44,10 @@
     </div>
     <div class="carousel-controls" id="hero-carousel-controls">
       <button class="carousel-btn" id="hero-prev" aria-label="Anterior">←</button>
-      <!-- los dots se insertan acá con JS -->
       <button class="carousel-btn" id="hero-next" aria-label="Siguiente">→</button>
     </div>
   </section>
 
-  <!-- CÓMO TRABAJAMOS -->
   <section class="proceso-section">
     <div class="proceso-header">
       <p class="hero-eyebrow">Nuestro proceso</p>
@@ -86,7 +80,6 @@
     </div>
   </section>
 
-  <!-- PROYECTOS DESTACADOS -->
   <section class="proyectos-section">
     <div class="proyectos-inner">
       <div class="proyectos-header">
@@ -94,12 +87,10 @@
         <h2 class="section-titulo dark">Proyectos activos</h2>
       </div>
 
-      <!-- las tarjetas se generan con JS desde js/posts-data.js -->
       <div class="blog-grid" id="blog-grid"></div>
     </div>
   </section>
 
-  <!-- MODAL DONACIÓN -->
   <div class="modal-overlay" id="modal-overlay">
     <div class="modal" id="modal-donar" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
       <button class="modal-close" id="modal-close" aria-label="Cerrar">✕</button>
@@ -131,7 +122,6 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-top">
       <div class="footer-brand">

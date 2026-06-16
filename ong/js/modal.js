@@ -1,12 +1,10 @@
-// ── MODAL DONACIÓN ──
-// Maneja la apertura, cierre y selección de monto del modal
+
 
 const overlay    = document.getElementById('modal-overlay');
 const modal      = document.getElementById('modal-donar');
 const montoBtns  = document.querySelectorAll('.monto-btn');
 const montoLabel = document.getElementById('monto-seleccionado');
 
-// Array con los IDs de todos los botones que abren el modal
 const idsBotonesDonar = [
   'btn-donar-nav',
   'btn-donar-hero',
@@ -23,7 +21,6 @@ function cerrarModal() {
   document.body.classList.remove('no-scroll');
 }
 
-// forEach sobre el array de IDs para asignar el evento a cada botón
 idsBotonesDonar.forEach(function (id) {
   const btn = document.getElementById(id);
   if (btn) {
@@ -31,30 +28,25 @@ idsBotonesDonar.forEach(function (id) {
   }
 });
 
-// Cerrar con el botón X
 document.getElementById('modal-close').addEventListener('click', cerrarModal);
 
-// Cerrar haciendo clic fuera del modal (sobre el overlay)
 overlay.addEventListener('click', function (e) {
   if (e.target === overlay) {
     cerrarModal();
   }
 });
 
-// Cerrar con la tecla Escape
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') {
     cerrarModal();
   }
 });
 
-// ── CALCULADORA DE IMPACTO ──
-// Traduce el monto elegido en impacto concreto. Editá estos costos
-// (en $) para ajustar la equivalencia de cada donación.
+
 const COSTO_IMPACTO = {
-  comida: 300,    // $ por día de alimento
-  vet: 1500,      // $ por kit veterinario
-  refugio: 600    // $ por día de refugio
+  comida: 300,    
+  vet: 1500,      
+  refugio: 600    
 };
 
 function montoSeleccionado() {
@@ -62,7 +54,6 @@ function montoSeleccionado() {
   return activo ? parseInt(activo.getAttribute('data-monto'), 10) : 0;
 }
 
-// Inserta la calculadora dentro del modal (después del monto).
 function renderCalculadora() {
   const label = document.querySelector('.modal-monto-label');
   if (!label) return;
@@ -90,22 +81,17 @@ function actualizarImpacto() {
   calc.querySelector('[data-tipo="refugio"]').textContent = Math.floor(monto / COSTO_IMPACTO.refugio);
 }
 
-// Arranque de la calculadora
 renderCalculadora();
 actualizarImpacto();
 
-// ── SELECTOR DE MONTOS ──
 montoBtns.forEach(function (btn) {
   btn.addEventListener('click', function () {
-    // Quitar active de todos con forEach
     montoBtns.forEach(function (b) {
       b.classList.remove('active');
     });
 
-    // Agregar active al clickeado
     btn.classList.add('active');
 
-    // Actualizar el label con if/else
     const valor = btn.getAttribute('data-monto');
     if (valor) {
       montoLabel.textContent = '$' + parseInt(valor).toLocaleString('es-AR');
@@ -113,12 +99,10 @@ montoBtns.forEach(function (btn) {
       montoLabel.textContent = '-';
     }
 
-    // Recalcular el impacto con el nuevo monto
     actualizarImpacto();
   });
 });
 
-// ── FORMULARIO DE PAGO: formato + reconocimiento de tarjeta ──
 const formDonacion = document.getElementById('form-donacion');
 
 if (formDonacion) {
@@ -126,7 +110,6 @@ if (formDonacion) {
   const expInput  = formDonacion.querySelector('input[placeholder="MM/AA"]');
   const cvvInput  = formDonacion.querySelector('input[placeholder="CVV"]');
 
-  // Detecta la marca a partir de los primeros dígitos
   function detectarMarca(n) {
     if (/^4/.test(n)) return 'Visa';
     if (/^(5[1-5]|2[2-7])/.test(n)) return 'Mastercard';
@@ -135,7 +118,6 @@ if (formDonacion) {
     return '';
   }
 
-  // Tarjeta: agrupa de a 4 y muestra la marca reconocida
   if (cardInput) {
     const wrap = document.createElement('div');
     wrap.className = 'card-field';
@@ -155,7 +137,6 @@ if (formDonacion) {
     });
   }
 
-  // Vencimiento: formatea MM/AA automáticamente
   if (expInput) {
     expInput.addEventListener('input', function () {
       let v = expInput.value.replace(/\D/g, '').slice(0, 4);
@@ -164,14 +145,12 @@ if (formDonacion) {
     });
   }
 
-  // CVV: solo números
   if (cvvInput) {
     cvvInput.addEventListener('input', function () {
       cvvInput.value = cvvInput.value.replace(/\D/g, '').slice(0, 4);
     });
   }
 
-  // ── SUBMIT: animación MOCK de pago (no procesa nada real) ──
   formDonacion.addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -180,7 +159,6 @@ if (formDonacion) {
     submitBtn.classList.add('cargando');
     submitBtn.innerHTML = '<span class="spinner"></span>Procesando pago...';
 
-    // Simulamos el procesamiento del pago
     setTimeout(function () {
       modal.innerHTML =
         '<div class="modal-gracias">' +

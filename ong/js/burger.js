@@ -1,5 +1,4 @@
-// ── BURGER MENU ──
-// Maneja la apertura y cierre del menú móvil
+
 
 const burger = document.getElementById('burger');
 const mobileMenu = document.getElementById('mobile-menu');
@@ -15,7 +14,6 @@ burger.addEventListener('click', function () {
   }
 });
 
-// Cerrar el menú al tocar cualquier link interno
 mobileMenu.querySelectorAll('a').forEach(function (link) {
   link.addEventListener('click', function () {
     burger.classList.remove('open');

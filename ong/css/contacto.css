@@ -1,18 +1,15 @@
-/* ── ESTILOS PÁGINA: CONTACTO ── */
 
 .nav-active {
   color: var(--verde-oscuro) !important;
   font-weight: 500 !important;
 }
 
-/* ── LAYOUT PRINCIPAL ── */
 .contacto-section {
   display: flex;
   min-height: calc(100vh - var(--nav-h));
   align-items: stretch;
 }
 
-/* columna izquierda */
 .contacto-info {
   flex: 0 0 42%;
   background: var(--verde-oscuro);
@@ -80,7 +77,6 @@
   line-height: 1.5;
 }
 
-/* columna derecha */
 .contacto-form-wrap {
   flex: 1;
   padding: 6rem 6vw 5rem 5vw;
@@ -89,7 +85,6 @@
   justify-content: center;
 }
 
-/* ── FORMULARIO ── */
 .contacto-form {
   display: flex;
   flex-direction: column;
@@ -137,7 +132,6 @@
   color: rgba(74,92,78,0.45);
 }
 
-/* estado de error */
 .form-group input.error,
 .form-group select.error,
 .form-group textarea.error {
@@ -159,7 +153,6 @@
   margin-top: 0.5rem;
 }
 
-/* ── MENSAJE DE ÉXITO ── */
 .form-success {
   display: none;
   text-align: center;
@@ -189,7 +182,6 @@
   line-height: 1.7;
 }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .contacto-section {
     flex-direction: column;
