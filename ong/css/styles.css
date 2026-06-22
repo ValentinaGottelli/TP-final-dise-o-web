@@ -61,6 +61,13 @@ nav.scrolled {
   color: var(--verde-claro);
 }
 
+.nav-logo-leaf {
+  height: 30px;
+  margin-right: 12px;
+  vertical-align: middle;
+  opacity: 0.9;
+}
+
 .nav-links {
   display: flex;
   gap: 2.5rem;
