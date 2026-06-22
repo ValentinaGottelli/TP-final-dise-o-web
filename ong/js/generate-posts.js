@@ -161,7 +161,7 @@ ${mediaBlock(post)}
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Santuario Vida Verde. Todos los derechos reservados.</p>
+      <p>2026 Santuario Vida Verde. Todos los derechos reservados.</p>
       <p>Hecho con amor para los que no tienen voz.</p>
     </div>
   </footer>
